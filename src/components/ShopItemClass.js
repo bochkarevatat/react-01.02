@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
-
+import { Component } from 'react';
 
 class ShopItemClass extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}; 
+  }
+
   render() {
     const { brand, title, description, descriptionFull, price, currency } =
-      this.item;
+      this.props.item;
+
     return (
       <div className='main-content'>
         <h2>{brand}</h2>
@@ -23,5 +28,5 @@ class ShopItemClass extends Component {
     );
   }
 }
- 
-  export default ShopItemClass;
+
+export default ShopItemClass;

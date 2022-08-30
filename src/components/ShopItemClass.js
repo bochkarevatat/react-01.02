@@ -1,11 +1,8 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ShopItemClass extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}; 
-  }
-
+  
   render() {
     const { brand, title, description, descriptionFull, price, currency } =
       this.props.item;
@@ -29,4 +26,14 @@ class ShopItemClass extends Component {
   }
 }
 
+ShopItemClass.propTypes = {
+  item: PropTypes.exact({
+    brand: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    descriptionFull: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    currency: PropTypes.string.isRequired,
+  }),
+}
 export default ShopItemClass;
